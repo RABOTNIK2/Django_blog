@@ -1,11 +1,6 @@
-<h1 align='center'>API Центра принятия жалоб</h1>
+<h1 align='center'>API Мини блога</h1>
 
-Проект представляет собой центр принятия жалоб сделанный с использованием технологии Django Rest Framework. В проекте реализован весь CRUD, авторизация(использовалась библиотека djoser), дополнительные @action под тематику проекта 
-
-### Тестирование
-* Тестирование создания пользователя.
-* Тестирование авторизации.
-* Тестирование вывода всех жалоб.
+Проект представляет собой мини сделанный с использованием технологии Django Rest Framework. В проекте реализован весь CRUD, авторизация(использовалась библиотека djoser), дополнительные @action под тематику проекта. Используется docker
 
 
 ### API Endpoint
@@ -16,43 +11,53 @@
 * **/auth/token/login/** (Авторизация пользователя)
 * **/api/users/logout/** (Выход пользователя)
 * **/api/users/me/** (Чтение пользователя GET, Редактирование пользователя POST, Удаление пользователя DELETE)
-* **/complain_api/user/get_complains/** (Получение всех обращений POST)
+* **/blog_api/user/friends/** (Добавления в друзья PUT)
   
 
-#### Complains
+#### Comment
 
-* **/complain_api/complain/** (Вывод всех жалоб, 'GET')
-* **/complain_api/complain/** (Добавление жалобы, 'POST')
-* **/complain_api/complain/pk/** (Чтение жалобы, 'GET')
-* **/complain_api/complain/pk/** (Редактирование жалобы, 'PUT')
-* **/complain_api/complain/pk/** (Удаление жалобы, 'DELETE')
-
-
-#### Category
-
-* **/complain_api/category/** (Вывод всех категорий жалоб, 'GET')
-* **/complain_api/category/** (Добавление категории, 'POST')
-* **/complain_api/category/pk/** (Чтение категории, 'GET')
-* **/complain_api/category/pk/** (Редактирование категории, 'PUT')
-* **/complain_api/category/pk/** (Удаление категории, 'DELETE')
+* **/blog_api/comment/** (Вывод комментариев, 'GET')
+* **/blog_api/comment/** (Добавление комментария, 'POST')
+* **/blog_api/comment/pk/** (Чтение комментария, 'GET')
+* **/blog_api/comment/pk/** (Редактирование комментария, 'PUT')
+* **/blog_api/comment/pk/** (Удаление комментария, 'DELETE')
 
 
-#### Answer
+#### Post
 
-* **/complain_api/answer/** (Вывод всех ответов, 'GET')
-* **/complain_api/answer/** (Добавление ответа, 'POST')
-* **/complain_api/answer/pk/** (Чтение ответа, 'GET')
-* **/complain_api/answer/pk/** (Редактирование ответа, 'PUT')
-* **/complain_api/answer/pk/** (Удаление ответа, 'DELETE')
+* **/blog_api/post/** (Вывод всех постов, 'GET')
+* **/blog_api/post/** (Добавление поста, 'POST')
+* **/blog_api/post/pk/** (Чтение поста, 'GET')
+* **/blog_api/post/pk/** (Редактирование поста, 'PUT')
+* **/blog_api/post/pk/** (Удаление поста, 'DELETE')
+* **/blog_api/post/like/** (Лайк, 'PUT')
+* **/blog_api/post/dislike/** (Дислайк, 'PUT')
+
+
+#### Theme
+
+* **/blog_api/theme/** (Вывод тем, 'GET')
+* **/blog_api/theme/** (Добавление темы, 'POST')
+* **/blog_api/theme/pk/** (Чтение темы, 'GET')
+* **/blog_api/theme/pk/** (Редактирование темы, 'PUT')
+* **/blog_api/theme/pk/** (Удаление темы, 'DELETE')
+
+
+#### Favorite
+
+* **/blog_api/favorite/** (Вывод избранных постов, 'GET')
+* **/blog_api/theme/** (Добавление в избранное, 'POST')
+* **/blog_api/theme/pk/** (Чтение избранного поста, 'GET')
+* **/blog_api/theme/pk/** (Удаление из избранного, 'DELETE')
 
 
 ### Install 
 
-    pip install -r req.txt
+    pip install -r requirement/prod.txt
 
 ### Usage
 
-    python manage.py test
+    python manage.py test --settings=blog.settings.prod
 
 ### License
 
